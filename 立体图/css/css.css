@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 800px;
+	height: 800px;
+	margin: 0 auto;
+	margin: 100px;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+.box1 img{
+	width: 500px;
+	height: 200px;
+}
+.box1{
+	width: 500px;
+	height: 200px;
+	transform: skew(45deg) ;
+	margin-left: 100px;
+}
+.box2 img{
+	width: 500px;
+	height: 300px;
+}
+.box2{
+	width: 500px;
+	height: 300px;
+	margin-left: 200px;
+}
+.box3 img{
+	width: 200px;
+	height: 300px;
+}
+.box3{
+	width: 200px;
+	height: 300px;
+	transform: skewx(-90deg) ;
+	transform: skewy(45deg) ;
+	margin-top: -400px;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>js</title>
+		<link rel="stylesheet" type="text/css" href="css/js.css"/>
+		<!-- 外部 -->
+		<script type="text/javascript"src="js/js.js"></script>
+		<!-- <style type="text/css">
+			.box{height: 40px;width: 350px;border: 1px solid #333;margin: 50 auto;}
+			.box img{vertical-align: middle;}
+		</style> -->
+		<style type="text/css">
+			.wrong{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="register">
+			<input type="password" name=""class="ipt"/>
+			<p class="message">请输入6~16位密码</p>
+		</div>
+		<script type="text/javascript">
+			var ipt=document.querySelector("ipt");
+			var message=document.querySelector(".message")
+			ipt.onblur=funtion()
+			{
+				if(this.value.length>6||this.value.length<16){
+					console.log("错误")
+					message.className="message wrong"
+					message.innerHTML="错误"
+				}
+			}
+		</script>
+		
+		
+		
+		
+		
+		
+		<!-- <button type="button">按钮</button>
+		<script type="text/javascript">
+		var btn=document.querySelectorAll("button")
+		btn[0].onclick=function(){
+			alert("world")
+		}
+		btn[1].onclick=function(){
+			btn[0].onclick=null;
+		}
+		function fc(){
+			  alert("world")
+		  }
+		btn[0].addEventListener('click',fc)
+		btn[1].addEventListener('click',function(){
+		btn[0].removeEventListener('click',fc) //fc是函数名   不是调用函数  所以不用加括号
+		})
+			// var btn=document.querySelector("button")
+			// btn.onclick=function(){
+			// 	alert("world")
+			// }
+			// btn.onclick=function(){
+			// 	alert("china")
+			// }
+			// btn.onmouseout=function(){
+			// 	alert("hunan")
+			// }
+			// btn.addEventListener("click",function(){
+			// 	alert("湘潭")
+			// })//监听函数
+		</script> -->
+		<!-- 节点 -->
+		<!-- <ul>
+			<li>11</li>
+			<li>11</li>
+			<li>11</li>
+		</ul>
+		<button type="button">删除</button>
+		<script type="text/javascript">
+			var ul=document.querySelector("ul")
+			var btn=document.querySelector("button")
+			btn.onclick=function(){
+				if(ul.children.length==0){
+					this.disabled=true;
+				}else{
+					ul.removeChild(ul.children[0]);
+				}
+			}
+		</script> -->
+		<!-- tab栏切换 -->
+		<!-- <div class="nav">
+			<ul>
+				<a href="#"><li class="li1">1</li></a>
+				<a href="#"><li>2</li></a>
+				<a href="#"><li class="li2">3</li></a>
+				<a href="#"><li class="li2">4</li></a>
+				<a href="#"><li class="li2">5</li></a>
+			</ul>
+			<div class="box">
+				<div class="item">11</div>
+				<div class="item">22</div>
+				<div class="item">33</div>
+			</div>
+		</div>
+		<script>
+		    var li = document.querySelectorAll('li');
+		    console.log(li);
+		    var item = document.querySelectorAll('.item');
+		    console.log(item);
+		    for(var i =0;i<li.length;i++){
+		        li[i].setAttribute('index',i);
+		        li[i].onclick = function(){
+		            for(var j =0;j<item.length;j++){
+		                li[j].className = '';
+		                console.log(li[i]);
+		            }
+		            this.className = 'li1';
+		            var index = this.getAttribute('index');
+		            console.log(index);
+		            for(var k = 0;k<item.length;k++){
+		                item[k].style.display='none';
+		            }
+		            item[index].style.display = 'block';
+		        }
+		    }
+		</script>
+		 -->
+		<!-- 排外思想 -->
+		<!-- 	<button>按钮1</button>
+			<button>按钮2</button>
+			<button>按钮3</button>
+		<script type="text/javascript">
+			var btn=document.getElementsByTagName('button');
+			console.log(btn);
+			for(var i=0;i<btn.length;i++){
+				console.log(btn[i])
+				btn[i].onclick=function(){
+					for(var j=0;j<btn.length;j++){
+						btn[j].style.backgroundColor='yellow';
+					}
+					this.style.backgroundColor='#f40';
+				}
+			}
+		</script> -->
+		<!-- 购物车全选框 -->
+		<!-- <input type="checkbox" name="" id="" value="" />全选<br>
+		<input type="checkbox"><br>
+		<input type="checkbox"><br>
+		<input type="checkbox"><br>
+		<script type="text/javascript">
+			var inputs=document.getElementsByTagName("input");
+			inputs[0].onclick=function(){
+				for(i=0;i<inputs.length;i++){
+					inputs[i].checked=this.checked
+					if(!this.checked){
+						num=0
+					}else{
+						num=inputs.length-1;
+					}
+				}
+				for(var i=1;i<inputs.length;i++){
+					inputs[i].onclick=function(){
+						if(!this.checked){
+							inputs[0].checked=false;
+							num--;
+						}else{
+							num++;
+						}
+						if(num===inputs.length-1){
+							inputs[0].checked=true;
+						}
+					}
+				}
+			}
+		</script> -->
+	<!-- 	<script>
+		        var all = document.querySelector('#all');
+		        var inputs = document.querySelectorAll('p input');
+		        all.onclick = function() {
+		            var tag = this.checked; // 全选的状态
+		            for (var i = 0; i < inputs.length; i++) {
+		                inputs[i].checked = tag;
+		            }
+		        }
+		        for (var i = 0; i < inputs.length; i++) {
+		            inputs[i].onclick = function() {
+		                var count = 0; // 计数器
+		                for (var i = 0; i < inputs.length; i++) {
+		                    if (inputs[i].checked) {
+		                        count++;
+		                    }
+		                }
+		                all.checked = count === inputs.length;
+		            }
+		        }
+		    </script> -->
+		<!-- <div class="box">
+			设置密码<input type="text" name="" id="" value="" /><img src="img/a.png" >
+		</div>
+		
+		<script type="text/javascript">
+			var pic=document.getElementById("pic")
+			pic.onclick=function(){
+			}
+		</script> -->
+		<!-- <script>
+			function change(path){
+				var photo=document.getElementById("img")
+				// console.log(img)
+				// img.src=" img/dog.jpg"
+				photo[0].src = 'img/'+path+'.png';
+			}
+		</script>
+		<button type="button" onclick="change('dog')">zql</button>
+		<button type="button" onclick="change('何珊珊')">hss</button>
+		<p><img src=" img/何珊珊.jpg"id="photo" ></p> -->
+		<!-- <h1 id="time">bb</h1>
+		<form name="myform">
+		<input type="button" name="" id="" value="按钮" onclick="change()"/>
+		</form> -->
+		<!-- 手机品牌:<br>
+		<ol id="phone">
+		<li>苹果</li>
+		<li>三星</li>
+		<li>华为</li>
+		<li>小米</li>
+		<li>vivo</li>
+		</ol>
+		电脑品牌:<br>
+		<ol id="computer">
+		<li>联想</li>
+		<li>戴尔</li>
+		<li>华硕</li>
+		<li>惠普</li>
+		<li>华为</li>
+		</ol> -->
+		<!-- <script>
+			function change(){
+			var time=document.getElementById("time")
+				alert(typeof time)
+				console.log(time)
+				console.dir(time)
+				time.innerHTML="2022-04-26"//修改文本节点 获取元素的内容
+				time.innerText="<font style=' color:aqua'>2022-04-26</font>"
+			}
+			var phones=document.getElementsByTagName("li");
+			console.log(phones)
+			phones[1].innerText="NOKIA"
+			for(i=0;i<phones.length;i++){
+				phones[i].innerText="bb"
+			}
+			var cp=document.getElementsById("computer");
+			console.log(cp)
+			var lis =cp.getElementsByName("li");
+		</script> -->
+		<!-- <form name="myform">
+			用户名:<input type="text" name="usename" id="" value="" /><br>
+			密码:<input type="text" name="password" id="" value="" /><br>
+			email:<input type="text" name="email" id="" value="" /><br>
+			<button type="button"onclick="check()">提交按钮</button>
+		</form> -->
+	<!-- <form action="" method=""name="myform">
+		加数:<input type="text" name="first" id="" value="" />
+		被加数:<input type="text" name="second" id="" value="" />
+		<input type="button" name="" id="" value="求和" onclick="sum()"/>
+		<input type="text" name="result" id="" value="" />
+	</form> -->
+		<!-- 内嵌 -->
+		<!-- <script type="text/javascript">
+			alert('bb')
+		</script> -->
+		
+		<!-- 行内 -->
+		<!-- <font size="" color="skyblue"onclick="alert('bb')">bb</font> -->
+		<!-- <button type="button" onclick="alert(333)">点我试试</button> -->
+	</body>
+</html>

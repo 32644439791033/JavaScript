@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>拖放项目</title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			.box{ float: left; margin-left: 150px; margin-top: 50px; font-size: 30px; font-weight: bolder;}
+			.box ul{ width: 100%; list-style: none; font-size: 20px; font-weight: normal; border: 1px solid #333; margin-top: 20px; min-height: 200px;}
+			.box ul li { width: 90%; height:30px; background-color: aqua; margin:15px auto;}
+		</style>
+		<script type="text/javascript">
+				 window.onload = function() {
+					var li = document.querySelectorAll("li");
+					for(var i=0;i<li.length;i++){
+						var like = document.getElementById("like");
+						 var dragEle ; //用来存储拖拽元素
+						li[i].ondragstart =function(){
+							dragEle = this
+						}
+						li[i].ondragover =like.ondragover = function(event){
+							event.preventDefault();
+						}
+						li[i].ondrop =like.ondrop = function(){
+							this.appendChild(dragEle)
+						}
+					}
+				}
+		</script>
+	</head>
+	<body>
+		<div class="box" id="drag" >
+			所有的运动项目
+			<ul >
+				<li  draggable="true">1. 篮球</li>
+				<li  draggable="true">2. 足球</li>
+				<li  draggable="true">3. 羽毛球</li>
+				<li  draggable="true">4. 游泳</li>
+				<li  draggable="true">5. 爬山</li>
+				<li  draggable="true">6. 跑步</li>
+				<li  draggable="true">7. 攀岩</li>
+				<li  draggable="true">8. 滑雪</li>
+			</ul>
+		</div>
+		<div class="box"> 喜欢的运动项目
+			<ul id="like"> </ul>
+		</div>
+	</body>
+</html>

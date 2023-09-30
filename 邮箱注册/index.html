@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>邮箱注册</title>
+	</head>
+	<body>
+		<form name="myform" id="fom"action="index.php">
+			请完成邮箱注册:<br>
+			邮箱：<input type="text" name="email" id="email" value="" />
+			<span style="" id="spanid"> </span><br>
+			密码：<input type="password" name="password" id="password" value="" />
+			<span style="" id="spanids"> </span><br>
+			确认密码：<input type="password" name="passwords" id="" value="" />
+			<span style="" id="spanides"> </span><br>
+			 <input type ="button" value="提交" id="btn"onclick="check()"> 
+		</form> 
+		<script>
+			function check(){
+				var spanid = document.getElementById("spanid");
+				var spanids = document.getElementById("spanids");
+				var spanides = document.getElementById("spanides");
+				var email=document.myform.email.value;
+				var reg=/[0-9a-zA-Z][\w-]*[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[a-zA-Z]+(\.[a-zA-Z]+)*/g;
+				if(reg.test(email)){
+					spanid.style.color = "green";
+					spanid.innerHTML = "email格式正确";
+				}else{
+					spanid.style.color = "red";
+					spanid.innerHTML = "email格式错误";
+				}
+				var password=document.myform.password.value;
+				var reg=/^[a-zA-Z0-9]{8,10}$/g;
+				if(reg.test(password)){
+					spanids.style.color = "green";
+					spanids.innerHTML = "密码格式正确";
+				}else{
+					spanids.style.color = "red";
+					spanids.innerHTML = "密码格式错误";
+				}
+				var passwords=document.myform.passwords.value;
+				if(password==passwords){
+					spanides.style.color = "green";
+					spanides.innerHTML = "密码正确";
+				}else{
+					spanides.style.color = "red";
+					spanides.innerHTML = "密码不一致";
+				}
+				var fom = document.querySelector('form')
+				if (spanid.style.color == "red"||spanids.style.color == "red"||spanides.style.color == "red") {
+					return false
+				} else{
+					fom.action = 'index.php'
+				}
+			}
+		</script>  
+	</body>
+</html>
+<!-- <html>
+<head>
+<title>邮箱验证</title>
+    <script>
+    function check(){
+        var email = document.myform.email.value;
+        var reg = /^[0-9a-zA-Z][\w-]*[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[a-zA-Z]+(\.[a-zA-Z]+)*$/;
+        if(reg.test(email)){
+            document.getElementById('infoEM').innerHTML = '<font style = "color:green">Email格式正确</font>';
+        }else{
+            document.getElementById('infoEM').innerHTML = '<font style = "color:red">Email格式不正确</font>';
+            return false;
+        }
+        
+        var password = document.myform.password.value;
+        var reg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,10}$/;
+        if(reg.test(password)){
+            document.getElementById('infoPW').innerHTML = '<font style = "color:green">密码格式正确</font>';
+        }else{
+            document.getElementById('infoPW').innerHTML = '<font style = "color:red">密码格式不正确</font>';
+            return false;
+        }
+        
+        var password1 = document.myform.password1.value;
+        if(password1 == password){
+           document.getElementById('infoPW1').innerHTML = '<font style = "color:green">密码格式正确</font>';  
+        }else{
+           document.getElementById('infoPW1').innerHTML = '<font style = "color:red">密码格式不正确</font>';
+            return false;
+        }
+         return true;
+  
+    }
+    </script>
+    
+</head>
+<body>
+    <form name = "myform" method="post" action="index.php">
+    请完成邮箱注册： <br>
+    邮箱：<input type="text" placeholder="请输入邮箱" name="email"> <span id="infoEM"></span><br>
+    密码：<input type="password" placeholder="请输入密码" name="password"><span id="infoPW"> </span><br>
+    确认密码：<input type="password" placeholder="请输入确认密码" name="password1"><span id="infoPW1"> </span>
+<br>
+    <input  type="submit" value="提交" onClick=" return check()" >
+  </form>
+</body>
+</html> -->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>选英雄</title>
+		<style type="text/css">
+			img{width: 100px;height: 100px;}
+		</style>
+	</head>
+	<body>
+		备选英雄:<br>
+		<span>
+		<img src="img/1.jpg">
+		<img src="img/2.jpg">
+		<img src="img/3.jpg">
+		<img src="img/4.jpg">
+		<img src="img/5.jpg">
+		</span><br>
+		<button type="button" onclick="arr()">点击随机选择英雄:</button><br>
+		<img src="img/6.png"  id="myPicture">
+		<script >
+		function arr(){
+			function getRandom(min, max){
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			var b=getRandom(1,5)
+			var a=document.getElementById("myPicture")
+			a.src='./img/'+b+'.jpg'
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>刮刮乐</title>
+		<style type="text/css">
+			canvas {
+			 border: 1px black solid;
+			 margin: 20px auto;
+			 display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="800" height="500"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			 function getRandom(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			 }
+			var c =getRandom(0,3)
+			canvas.style.backgroundImage = 'url(img/'+c+'dj.jpg)';
+			ctx.beginPath()
+			ctx.rect(0,0,800,500); 
+			ctx.fillStyle="gray";
+			ctx.fill();
+			ctx.strokeStyle="gray";
+			ctx.lineWidth = 10;
+			ctx.stroke();
+			canvas.onmousedown = function(){      
+			 ctx.beginPath()
+			 canvas.onmousemove = function(e){
+			  ctx.globalCompositeOperation = 'destination-out';  
+			  ctx.lineWidth = 10;
+			  ctx.lineTo(e.offsetX,e.offsetY);
+			  ctx.stroke();
+			 }
+			 
+			 canvas.onmouseup = function(){
+			  ctx.closePath();
+			  canvas.onmousemove = null;
+			 }
+			}
+		</script>
+	</body>
+</html>

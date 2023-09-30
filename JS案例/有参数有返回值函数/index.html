@@ -1,0 +1,21 @@
+<html><head>
+<title>有参数有返回值函数</title>
+<script language="javascript">
+<!--
+function sumbetween(num1,num2)   //该函数返回num1到num2之间所有整数之和
+{
+    var  total=0,temp;
+	for(temp=num1; temp<=num2; temp++)
+	{
+    	total += temp;
+	}
+    return  total;    //函数返回值
+}
+//-->
+</script></head>
+<body><p>
+  <script type="text/javascript">
+  var  sum= 0 ;
+   sum = sumbetween(1,100);    //调用sumbetween函数
+  document.write("1至100之间所有整数的和为："+sum);
+ </script></p></body></html>

@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+boby{
+	max-width: 680px;
+	min-width: 320px;
+	overflow-x: hidden;
+	font-size: 14px;
+}
+/* 这是容器 */
+#container{
+	width: 60%;
+	margin: 0 auto;
+	overflow-x: hidden;
+	max-width: 680px;
+	min-width: 320px;
+	display: flex;
+	font-size: 14px;
+	flex-direction: column;
+}
+.content{
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	background-color: #f3f3f3;
+}
+/* 这是头部 */
+.head{
+	width:100%;
+	display: flex;
+}
+.head input{
+	width:100%;
+	color: #CCCCCC;
+	height: 30px;
+	margin: 10px;
+	border: 0;
+	border: 3px solid #5E9ACC;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+/* 这是头部导航栏 */
+.hotel{
+	width:100%;
+	display: flex;
+}
+.hotel ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+.hotel ul li{
+	width: 20%;
+	height: 105px;
+	display: inline-block;
+}
+/* 这是特价直播 */
+.place{
+	width:100%;
+	display: flex;
+	height: 300px;
+}
+.place div{
+	width:45%;
+	height: 250px;
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 20px;
+	background-color: white;
+}
+.place .p1{
+	height: 50px;
+}
+.place div  ul li{
+	width: 48%;
+	display: inline-block;
+}
+/* 这是周边 */
+.banner{
+	width:100%;
+	height: 200px;
+	text-align: center;		
+	justify-content: space-around ;
+}
+.banner img{
+	width: 100%;
+	border-radius: 20px;
+}
+/* 这是脚部 */
+.foot{
+	width:100%;
+	height: 250px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.foot ul {
+	display: flex;
+}
+.foot ul li{
+	width: 150px;
+	height: 40px;
+	margin-left: 50px;
+	display: inline-block;
+	border: 1px solid #333333;
+	border-radius: 10px;
+}
+.foot ul li img{
+	margin: 10px;
+	vertical-align: middle;
+}
+.foot ul li span,p{
+	text-align: center;
+}
+.foot ul li  p{
+	margin-top: -30px;
+}
+.foot div span{
+	position: relative;top: 20px;
+	margin-left: 300px;
+}
+.foot div span b{
+	margin: 20px;
+}
+.foot div p{
+	margin-top: 20px;
+	margin-left: 250px;
+}
+.foot .top{
+	margin-left: 120px;
+	margin-top: -30px;
+}
+.foot .day{
+	width: 80px;
+	margin-top: 300px;
+	margin-left: 80px;
+}
+/* 这是底部导航栏 */
+.nav{
+	width:100%;
+	height: 100px;
+	display: flex;
+	margin-top: 255px;
+	background-color:white;
+}
+.nav ul li{
+	width: 80px;
+	height: 50px;
+	margin-left: 80px;
+	margin-top: 30px;
+	display: inline-block;
+}
+.nav ul li img{
+	width:30px;
+	height:30px;
+}
+.nav ul li p{
+	margin-left: -50px;
+}

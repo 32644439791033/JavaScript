@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>碰撞的小球</title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid ;
+				margin: 0 auto;
+				display: block;  //转换成块级元素
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="game" width="500" height="500"></canvas>
+	</body>
+		<script>
+			function ball() {
+				this.r = this.rand(20);
+				this.x = this.r;
+				this.y = this.r;
+				this.speedX = this.rand(10);
+				this.speedY = this.rand(10);
+				this.width = 0;
+				this.height = 0;
+				this.canvas = {};
+				this.color = 'rgb('+this.rand(255)+','+this.rand(255)+','+this.rand(255)+')';
+				this.init();
+			}
+			ball.prototype = {
+				init:function () {
+					var game = document.getElementById('game');
+					this.canvas = game.getContext('2d');
+					this.width=game.width;
+					this.height=game.height;
+				},
+				rand:function (num) {
+					return Math.floor(Math.random() * num+1);
+				},
+				play:function () {
+					this.x += this.speedX;
+					this.y += this.speedY;
+					if (this.x>this.width-this.r) {
+						this.speedX = -this.speedX;
+					}
+					if (this.x<this.r) {
+						this.speedX = Math.abs(this.speedX);
+					}
+					if (this.y>this.width-this.r) {
+						this.speedY = -this.speedY;
+					}
+					if (this.y<this.r) {
+						this.speedY = Math.abs(this.speedY);
+					}
+					this.canvas.beginPath();
+					this.canvas.fillStyle = this.color;
+					this.canvas.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+					this.canvas.fill();
+				}
+			};
+			var arr = [];
+			for (var i=0;i<70;i++) {
+				arr[i] = new ball();
+			}
+			setInterval(function () {
+				arr[0].canvas.clearRect(0,0,500,500);
+				for (var i=0;i<arr.length;i++) {
+					arr[i].play();
+				}
+			},33)
+		</script>
+</html>

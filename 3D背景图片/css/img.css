@@ -1,0 +1,30 @@
+.box{
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+}
+.box div{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+.box1{
+	background-color: #333333;left: 0;
+}
+.box2{
+	background-color: #000000;left: 300px;
+	 transform: rotateY(90deg);transform-origin: left;
+}
+.box3{
+	background-color: red;left: 330px;
+	 z-index: 90px;
+}
+.box4{
+	background-color: #000000;left: 350px;
+	transform: rotateY(-88deg);transform-origin: right;
+}
+.box5{
+	background-color: #333333;left: 650px;
+}
